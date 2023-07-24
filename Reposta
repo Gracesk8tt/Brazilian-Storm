@@ -1,0 +1,19 @@
+function solucao(notas) {
+	  
+  notas.sort((a, b) => a - b);
+
+ 
+  notas.shift(); 
+  notas.pop();   
+
+  const somaNotas = notas.reduce((sum, nota) => sum + nota, 0);
+  const mediaNotas = somaNotas / notas.length;
+
+  console.log(mediaNotas);
+}
+   
+
+
+function processData(input) {
+    solucao(input.trim().split(" ").filter(x => x).map(x => parseInt(x, 10)));
+} 
